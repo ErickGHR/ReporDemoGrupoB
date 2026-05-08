@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import http from "http";
 import { WebSocketServer } from "ws";
@@ -9,11 +12,10 @@ import crypto from "crypto";
 const PORT = process.env.PORT || 4001;
 const SERVER_NAME = process.env.SERVER_NAME || `Servidor-${PORT}`;
 const REDIS_URL = process.env.REDIS_URL;
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173";
 
 if (!REDIS_URL) {
-  console.error("ERROR: Falta configurar REDIS_URL");
-  console.error("Ejemplo:");
-  console.error('set "REDIS_URL=redis://default:password@host:puerto"');
+  console.error("ERROR: Falta configurar REDIS_URL en el archivo .env");
   process.exit(1);
 }
 
@@ -25,19 +27,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      const allowedOrigins = [
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:5175"
-      ];
-
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Origen no permitido por CORS"));
-      }
-    },
+    origin: CLIENT_ORIGIN,
     credentials: true
   })
 );
@@ -70,8 +60,9 @@ app.get("/", (req, res) => {
   res.json({
     message: "Backend ChatMSG Fase 2 funcionando",
     server: SERVER_NAME,
+    port: PORT,
     redis: "activo",
-    websocket: `ws://localhost:${PORT}`
+    clientOrigin: CLIENT_ORIGIN
   });
 });
 
@@ -108,7 +99,11 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/logout", (req, res) => {
-  res.clearCookie("chat_username");
+  res.clearCookie("chat_username", {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: false
+  });
 
   res.json({
     message: "Sesión cerrada"

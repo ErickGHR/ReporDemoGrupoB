@@ -1,0 +1,6 @@
+"esto es un archivo de ejemplo" 
+"Agregamos esta segunda linea"
+"Esta es una linea para la tercera versión"
+
+"esto es un archivo de ejemplo"
+"<HTML> </HTML>"

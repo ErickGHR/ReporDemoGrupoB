@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo Metro UI</title>
+
+  <!-- =======================================================
+       INSTALACIÓN (CDN) - METRO UI (CSS + ICONOS)
+       - metro.css: estilos del framework
+       - icons.css: librería de íconos (opcional)
+       ======================================================= -->
+  <link rel="stylesheet" href="https://cdn.metroui.org.ua/current/metro.css">
+  <link rel="stylesheet" href="https://cdn.metroui.org.ua/current/icons.css">
+
+  <!-- =======================================================
+       ESTILOS ADICIONALES (CUSTOM)
+       - Se agrega un ancho máximo para que el contenido no se
+         extienda demasiado en pantallas grandes.
+       ======================================================= -->
+  <style>
+    /* Extra mínimo para que se vea “presentable” */
+    .page-wrap { max-width: 1100px; }
+  </style>
+</head>
+
+<body class="m-0">
+
+  <!-- =======================================================
+       NAVEGACIÓN - APP BAR (BARRA SUPERIOR)
+       - data-role="app-bar": activa el componente App Bar
+       - brand: logo/nombre del sitio
+       - app-bar-menu: menú de navegación
+       ======================================================= -->
+  <div data-role="app-bar">
+    <a href="#" class="brand">
+      <!-- ICONO (Metro UI Icons) -->
+      <span class="icon mif-rocket"></span>
+      <span class="caption">Mi sitio</span>
+    </a>
+
+    <!-- MENÚ (NAVEGACIÓN POR SECCIONES DEL MISMO DOCUMENTO) -->
+    <ul class="app-bar-menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- =======================================================
+       CONTENEDOR PRINCIPAL + UTILIDADES DE ESPACIADO
+       - container: centra y da estructura al contenido
+       - page-wrap: limita el ancho máximo (CSS custom)
+       - p-4: padding (utilidad Metro UI)
+       ======================================================= -->
+  <div class="container page-wrap p-4">
+
+    <!-- =======================================================
+         NAVEGACIÓN - BREADCRUMBS (RUTA DE NAVEGACIÓN)
+         - breadcrumbs: componente de migas de pan
+         - mb-4: margin-bottom (utilidad Metro UI)
+         ======================================================= -->
+    <ul class="breadcrumbs mb-4">
+      <li><a href="#"><span class="icon mif-home"></span>Home</a></li>
+      <li class="active"><a href="#">Demo</a></li>
+    </ul>
+
+    <!-- =======================================================
+         SECCIÓN 1 - INICIO + BOTÓN + TOAST
+         - border + bd-default: borde y estilo de borde
+         - p-4: padding
+         - mb-4: margen inferior
+         - button primary: estilo de botón Metro UI
+         ======================================================= -->
+    <section id="inicio" class="border bd-default p-4 mb-4">
+      <h2 class="m-0 mb-2">Demo con Metro UI</h2>
+      <p class="m-0">
+        Esta página usa App Bar, Breadcrumbs, Grid, Form Validator, Toast e íconos.
+      </p>
+
+      <!-- BOTÓN QUE DISPARA UN TOAST (NOTIFICACIÓN) -->
+      <button class="button primary mt-3" id="btnToast">
+        <span class="mif-bell mr-1"></span> Probar Toast
+      </button>
+    </section>
+
+    <!-- =======================================================
+         SECCIÓN 2 - SERVICIOS (GRID SYSTEM - 12 COLUMNAS)
+         - grid: contenedor del sistema de grid
+         - row: fila
+         - cell-4: columna que ocupa 4/12 (3 columnas en total)
+         ======================================================= -->
+    <section id="servicios" class="mb-4">
+      <h3 class="mt-0 mb-2">Servicios (Grid 12 columnas)</h3>
+
+      <div class="grid">
+        <div class="row">
+
+          <!-- CARD 1 -->
+          <div class="cell-4">
+            <div class="border bd-default p-3">
+              <h5 class="mt-0">Servicio A</h5>
+              <p class="m-0">Ejemplo de bloque con utilidades: border, padding, margin.</p>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="cell-4">
+            <div class="border bd-default p-3">
+              <h5 class="mt-0">Servicio B</h5>
+              <p class="m-0">Diseño responsive con Grid basado en flexbox.</p>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="cell-4">
+            <div class="border bd-default p-3">
+              <h5 class="mt-0">Servicio C</h5>
+              <p class="m-0">Puedes combinar con Common CSS (d-flex, spacing, etc.).</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECCIÓN 3 - FORMULARIO + VALIDATOR
+         - data-role="validator": activa validación automática
+         - data-validate="required / email": reglas de validación
+         - textarea con data-role="textarea": componente textarea
+         ======================================================= -->
+    <section id="contacto" class="border bd-default p-4">
+      <h3 class="mt-0 mb-3">Contacto (Form + Validator)</h3>
+
+      <form data-role="validator" id="contactForm">
+        <!-- CAMPO NOMBRE -->
+        <div class="form-group mb-3">
+          <label>Nombre</label>
+          <input type="text" data-validate="required" placeholder="Tu nombre">
+        </div>
+
+        <!-- CAMPO EMAIL -->
+        <div class="form-group mb-3">
+          <label>Email</label>
+          <input type="email" data-validate="required email" placeholder="correo@dominio.com">
+        </div>
+
+        <!-- CAMPO MENSAJE -->
+        <div class="form-group mb-3">
+          <label>Mensaje</label>
+          <textarea data-role="textarea" data-validate="required" placeholder="Escribe tu mensaje..."></textarea>
+        </div>
+
+        <!-- BOTÓN ENVIAR -->
+        <button class="button success" type="submit">
+          <span class="mif-envelop mr-1"></span> Enviar
+        </button>
+      </form>
+    </section>
+
+  </div>
+
+  <!-- =======================================================
+       INSTALACIÓN (CDN) - METRO UI (JAVASCRIPT)
+       - metro.js: habilita funcionalidades y componentes
+         interactivos (toast, validator, app-bar, etc.)
+       ======================================================= -->
+  <script src="https://cdn.metroui.org.ua/current/metro.js"></script>
+
+  <!-- =======================================================
+       LÓGICA JAVASCRIPT (INTERACCIÓN / EVENTOS)
+       - Toast: notificación al presionar botón
+       - Submit: intercepta envío y muestra mensaje
+       ======================================================= -->
+  <script>
+    // =======================================================
+    // EVENTO 1: BOTÓN "Probar Toast"
+    // - Al hacer clic, crea una notificación Toast
+    // - clsToast aplica clases de color Metro UI
+    // =======================================================
+    document.getElementById("btnToast").addEventListener("click", () => {
+      Metro.toast.create("Toast de prueba (Metro UI)", {
+        timeout: 3000,
+        position: "top",
+        clsToast: "bg-red fg-white"
+      });
+    });
+
+    // =======================================================
+    // EVENTO 2: ENVÍO DE FORMULARIO
+    // - e.preventDefault(): evita recargar la página
+    // - Si pasa validación, mostramos Toast de confirmación
+    // =======================================================
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      Metro.toast.create("Formulario enviado correctamente ✅", { position: "top" });
+    });
+  </script>
+</body>
+</html>

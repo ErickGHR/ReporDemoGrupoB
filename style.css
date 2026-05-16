@@ -1,0 +1,102 @@
+body{
+    margin: 50px;
+    background: linear-gradient(260deg, #1430ff 30%, #ffffff 100%);
+}
+
+img{
+    padding: 20px;
+    border-radius: 60%;
+    background: linear-gradient(0deg,#f00 0%, #fff 100%);
+}
+
+.imagen-main{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    width: 300px;
+    text-align: center;
+    font-family: console, sans-serif;
+    color: rgba(0, 209, 98, 0.984);
+    font-size: 70px;
+    transform: rotate(5seg);
+    text-shadow: 5px 5px 10px black;
+    margin-left: auto;
+    margin-right: auto;
+}
+.intro{
+    background: black;
+    color: aliceblue;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.menu{
+    padding: 50px;
+    background: rgba(0, 209, 98, 0.984);
+    margin-left: 20px;
+    margin-right: 200px;
+    text-decoration: none;
+    color: rgb(237, 36, 255);
+    font-size: 50px;
+    block-size: 100px;
+}
+
+.nav{
+    font-size: 30px;
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav li{
+    display: inline-block;
+}
+
+.nav a{
+    color: rgba(0, 209, 98, 0.984);
+    background-color: #eeff01;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+a:link{
+    background-color: #1430ff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 2px;
+}
+a:visited{
+    background-color: purple;
+}
+a:hover{
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+a:active{
+    color: red;
+}
+
+.div-Manzana{
+    margin: 10px;
+    padding: 20px;
+    background: linear-gradient(260deg, #ffffff 30%, #00ff04 100%);
+    border-radius: 30px;
+}
+
+.div-Chocolate{
+    margin: 10px;
+    padding: 20px;
+   background: radial-gradient(circle, #ffffff 30%, #b300ff 100%);    border-radius: 30px;
+}
+
+.div-Fresas{
+    margin: 10px;
+    padding: 20px;
+   background: conic-gradient(from 179deg, #ffffff 30%, #ff0000 100%);
+    border-radius: 30px;
+}
+    

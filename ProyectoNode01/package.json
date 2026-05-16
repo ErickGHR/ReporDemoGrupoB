@@ -1,0 +1,15 @@
+{
+  "name": "proyectonode01",
+  "version": "1.0.0",
+  "description": "Introducción a nodejs como backend",
+  "license": "ISC",
+  "author": "Saúl Hernández Arres",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

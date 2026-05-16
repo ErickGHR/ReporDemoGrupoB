@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    font-size: 12px;
+
+}
+h1{
+    text-align: center;
+    font-size: 4rem;
+    opacity: 1;
+}
+
+.container{
+    border: 5px solid black;
+    /*width: 1600px;*/
+    height: 800px;
+    margin: 2rem auto;
+    display:flex;
+    /*flex-direction: column;
+    flex-wrap: wrap-reverse;*/
+    flex-flow: ROW wrap;
+    
+
+}
+
+.box{
+    
+    height: 200px;
+    width: 200px;
+    font-size: 4rem;
+    border-radius: 6px;
+    text-align: center;
+
+}
+
+.uno{
+    background-color: chocolate;
+}
+
+.dos{
+    flex-direction:
+    justify-content:
+    flex-flow:
+    FLEX: 2;
+    background-color: blueviolet;
+
+}
+.tres{
+    background-color: darkgreen;
+}
+
+.cuatro{
+    background-color: darkgoldenrod;
+}
+
+.cinco{
+    background-color: brown;
+}
+
+.seis{
+    background-color: darkred;
+}
